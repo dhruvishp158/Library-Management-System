@@ -1,0 +1,17 @@
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\bin\Debug\Project-4.exe.config
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\bin\Debug\Project-4.exe
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\bin\Debug\Project-4.pdb
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\bin\Debug\EntityFramework.dll
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\bin\Debug\HiTech-Library.dll
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\bin\Debug\HiTech-Library.pdb
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\bin\Debug\EntityFramework.xml
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\obj\Debug\Project-4.csprojAssemblyReference.cache
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\obj\Debug\Project_4.OrderForm.resources
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\obj\Debug\Project_4.Properties.Resources.resources
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\obj\Debug\Project-4.csproj.GenerateResource.cache
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\obj\Debug\Project-4.csproj.CoreCompileInputs.cache
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\obj\Debug\Project-4.csproj.CopyComplete
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\obj\Debug\Project-4.exe
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\Project-4\obj\Debug\Project-4.pdb

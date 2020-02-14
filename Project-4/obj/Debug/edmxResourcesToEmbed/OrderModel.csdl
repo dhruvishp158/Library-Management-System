@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HiTechDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="ISBN" />
+    </Key>
+    <Property Name="ISBN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UnitPrice" Type="Int32" />
+    <Property Name="YearPlublished" Type="DateTime" Precision="3" />
+    <Property Name="QOH" Type="Int32" />
+    <Property Name="PublisherId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" />
+    <NavigationProperty Name="OrderLines" Relationship="Self.FK_OrderLine_Books" FromRole="Books" ToRole="OrderLine" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditLimit" Type="Int32" />
+    <Property Name="PhoneNumber" Type="Int32" />
+    <Property Name="FaxNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Customers" FromRole="Customers" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="HiTechEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_HiTechEmployees" FromRole="HiTechEmployees" ToRole="Orders" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OrderLine">
+    <Key>
+      <PropertyRef Name="OrderNumber" />
+      <PropertyRef Name="ISBN" />
+    </Key>
+    <Property Name="OrderNumber" Type="Int32" Nullable="false" />
+    <Property Name="ISBN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Book" Relationship="Self.FK_OrderLine_Books" FromRole="OrderLine" ToRole="Books" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_OrderLine_Orders" FromRole="OrderLine" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderNumber" />
+    </Key>
+    <Property Name="OrderNumber" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Orders_Customers" FromRole="Orders" ToRole="Customers" />
+    <NavigationProperty Name="HiTechEmployee" Relationship="Self.FK_Orders_HiTechEmployees" FromRole="Orders" ToRole="HiTechEmployees" />
+    <NavigationProperty Name="OrderLines" Relationship="Self.FK_OrderLine_Orders" FromRole="Orders" ToRole="OrderLine" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_OrderLine_Books">
+    <End Role="Books" Type="Self.Book" Multiplicity="1" />
+    <End Role="OrderLine" Type="Self.OrderLine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="ISBN" />
+      </Principal>
+      <Dependent Role="OrderLine">
+        <PropertyRef Name="ISBN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Customers">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_HiTechEmployees">
+    <End Role="HiTechEmployees" Type="Self.HiTechEmployee" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HiTechEmployees">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderLine_Orders">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderLine" Type="Self.OrderLine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderNumber" />
+      </Principal>
+      <Dependent Role="OrderLine">
+        <PropertyRef Name="OrderNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HiTechDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Books" EntityType="Self.Book" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="HiTechEmployees" EntityType="Self.HiTechEmployee" />
+    <EntitySet Name="OrderLines" EntityType="Self.OrderLine" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_OrderLine_Books" Association="Self.FK_OrderLine_Books">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="OrderLine" EntitySet="OrderLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Customers" Association="Self.FK_Orders_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_HiTechEmployees" Association="Self.FK_Orders_HiTechEmployees">
+      <End Role="HiTechEmployees" EntitySet="HiTechEmployees" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderLine_Orders" Association="Self.FK_OrderLine_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderLine" EntitySet="OrderLines" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,6 @@
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\HiTech-Library\bin\Debug\HiTech-Library.dll
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\HiTech-Library\bin\Debug\HiTech-Library.pdb
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\HiTech-Library\obj\Debug\HiTech-Library.csprojAssemblyReference.cache
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\HiTech-Library\obj\Debug\HiTech-Library.csproj.CoreCompileInputs.cache
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\HiTech-Library\obj\Debug\HiTech-Library.dll
+C:\Users\owner\OneDrive\Desktop\Lasalle\SEM3\Multi-tier\Project\HiTechOrderSyatem\HiTech-Library\obj\Debug\HiTech-Library.pdb
